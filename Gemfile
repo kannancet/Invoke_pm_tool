@@ -53,4 +53,6 @@ gem "email_spec", :group => :test
 gem 'factory_girl_rails', :group => :test
 
 gem 'rspec-rails', :group => [:development, :test]
-gem "capybara-webkit"
+# gem "capybara-webkit"
+gem 'poltergeist'
+gem 'selenium-webdriver'

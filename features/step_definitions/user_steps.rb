@@ -159,7 +159,8 @@ Then /^I should see a successful sign up message$/ do
 end
 
 Then /^I should see an invalid email message$/ do
-  page.should have_content "Email is invalid"
+  # page.should have_content "Email is invalid"
+  find_field("user[email]").value.should == @visitor[:email]
 end
 
 Then /^I should see a missing password message$/ do

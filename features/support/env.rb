@@ -56,6 +56,3 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
-# cucumber-rails runs DatabaseCleaner.start and DatabaseCleaner.clean before and after your scenarios.Please uncomment if it is not needed
-# Cucumber::Rails::Database.autorun_database_cleaner = false
-

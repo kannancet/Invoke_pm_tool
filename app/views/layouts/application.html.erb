@@ -10,16 +10,83 @@
     <%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
+    <%= render 'layouts/navigation' %>
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <h2>Lorem Ipsum</h2>
+        <p>Sed placerat fringilla quam et.</p>
+      </div>
+    </div>
+
+      
     <div id="container" class="container">
       <header>
-        <%= render 'layouts/navigation' %>
-        <%= render 'layouts/messages' %>
       </header>
       <div id="main" role="main">
+      <%= render 'layouts/messages' %>
         <%= yield %>
       </div>
-      <footer>
-      </footer>
-    </div> <!--! end of #container -->
+    </div>
+    <hr class="featurette-divider">
+    <footer class="footer-down">
+        <div class="container">
+        <div class="row">
+          <div class="col-md-4">&copy; 2013</div>
+          <div class="col-md-4">
+            <ul class="nav nav-pills">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Support 24x7</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3 class="text-right">Invoke PM tool</h3>
+          </div>
+        </div>
+        </div>
+    </footer> <!--! end of #container -->
   </body>
 </html>
+
+
+<style>
+/*sign_in styles*/
+body {
+    padding-top: 40px;
+    /*padding-bottom: 40px;*/
+    /*background-color: #eee;*/
+}
+.form-signin {
+    max-width: 350px;
+    padding: 15px;
+    margin: 0 auto;
+}
+/*.form-signin .form-signin-heading, .form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin .checkbox {
+    font-weight: normal;
+}
+.form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input[type="text"], .form-signin input[type="password"] {
+    margin-bottom: 10px;
+}
+.form-signin label {
+    font-weight: normal;
+}
+.error {
+    color: #b94a48;
+}*/
+/*sign_in styles*/
+</style>

@@ -9,6 +9,7 @@ Bundler.require(:default, Rails.env)
 module InvokePmTool
   class Application < Rails::Application
     config.filter_parameters += [:password, :password_confirmation]
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

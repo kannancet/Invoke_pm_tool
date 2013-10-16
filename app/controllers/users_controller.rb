@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
+  include Authority::UserAbilities
 
   def index
     @users = User.all

@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta "http-equiv"="X-UA-Compatible" content="IE=edge">
+
+  
+
+  <link rel="stylesheet" href="/assets/demo.css.scss">
+  <script src="/assets/demo.js"></script>
+
+  <link href="http://earth.pinsupreme.com/assets/favicon.ico" rel="shortcut icon">
+  <link href="http://earth.pinsupreme.com/assets/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    @javascript html5shiv respond.min
+  <![endif]-->
+
+  <title>PM Tool</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Invoke PM tool" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Invoke PM tool" %>">
@@ -9,42 +28,11 @@
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
-  <body class="<%= controller_name %> <%= action_name %>">
-    <%= render 'layouts/navigation' %>
-    <div class="container-fluid">
-      <div class="jumbotron">
-        <h2>Lorem Ipsum</h2>
-        <p>Sed placerat fringilla quam et.</p>
-      </div>
-    </div>
-
-      
-    <div id="container" class="container">
-      <header>
-      </header>
-      <div id="main" role="main">
-      <%= render 'layouts/messages' %>
-        <%= yield %>
-      </div>
-    </div>
-    <hr class="featurette-divider">
-    <footer class="footer-down">
-        <div class="container">
-        <div class="row">
-          <div class="col-md-4">&copy; 2013</div>
-          <div class="col-md-4">
-            <ul class="nav nav-pills">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Support 24x7</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h3 class="text-right">Invoke PM tool</h3>
-          </div>
-        </div>
-        </div>
-    </footer> <!--! end of #container -->
+  <body class="<%= controller_name %> <%= action_name %> noise-wrapper">
+    <%= render 'layouts/messages' %> 
+    <%= render 'layouts/navigation' %>  
+    <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
 
@@ -52,16 +40,16 @@
 <style>
 /*sign_in styles*/
 body {
-    padding-top: 40px;
-    /*padding-bottom: 40px;*/
-    /*background-color: #eee;*/
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
 }
 .form-signin {
     max-width: 350px;
     padding: 15px;
     margin: 0 auto;
 }
-/*.form-signin .form-signin-heading, .form-signin .checkbox {
+.form-signin .form-signin-heading, .form-signin .checkbox {
     margin-bottom: 10px;
 }
 .form-signin .checkbox {
@@ -87,6 +75,15 @@ body {
 }
 .error {
     color: #b94a48;
+}
+/*.footer-down {
+  margin-top :25% !important;
 }*/
 /*sign_in styles*/
+
+
+.navbar-nav > li > a {
+  background: transparent !important;
+  color: #555555 !important;
+}
 </style>

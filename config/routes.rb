@@ -1,9 +1,11 @@
 InvokePmTool::Application.routes.draw do
+  # post '/user/new' => 'users#create'
   authenticated :user do
-    # root :to => 'home#index'
+     # root :to => 'home#index'
   end
   root :to => "home#index"
-  devise_for :users
+  # post '/users' => 'users#create'
+  devise_for :users, :controllers => { :registrations => "registrations" }
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

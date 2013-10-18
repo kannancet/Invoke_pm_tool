@@ -1,3 +1,4 @@
 class User < ActiveRecord::Base
-  include Authentication  
+  include Authority::UserAbilities
+  include Authentication 
 end

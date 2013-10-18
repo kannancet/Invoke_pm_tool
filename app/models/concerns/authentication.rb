@@ -1,8 +1,8 @@
 module Authentication    	
 	extend ActiveSupport::Concern
-  		
+  	# include Authority::UserAbilities	
 	included do
-		rolify 
+		rolify  
 		before_save :setup_role
 		devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :trackable, :validatable
@@ -14,4 +14,8 @@ module Authentication
 	      self.add_role(:user) 
 	    end
   	end
+
+  	def updatable_by?(user)
+     	user.has_role?(:admin)
+  	end 
 end

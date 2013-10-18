@@ -22,6 +22,11 @@ def create_user
   @user = FactoryGirl.create(:user, @visitor)
 end
 
+def create_admin
+  create_user
+  @user.add_role :admin
+end
+
 def delete_user
   @user ||= User.where(:email => @visitor[:email]).first
   @user.destroy unless @user.nil?
@@ -188,6 +193,19 @@ Then /^I should see an account edited message$/ do
 end
 
 Then /^I should see my name$/ do
-  create_user
   page.should have_content @user[:name]
 end
+
+Then /^I should_not see edit updation$/ do
+  page.should_not have_link('EDIT USER', href: 'users/8/edit')
+end
+
+Then /^I should see edit updation$/ do
+  page.should have_link('EDIT USER')
+end
+
+Given /^I exist as an admin$/ do
+  create_admin
+end
+
+
